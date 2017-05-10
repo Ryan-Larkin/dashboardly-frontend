@@ -44,6 +44,12 @@ class Api {
     .get(`${API_HOST}/boards/${boardId}/bookmarks`)
   )
 
+  getUserInfo = () => (
+    superagent
+    .get(`${API_HOST}/auth/me`)
+    .set('Authorization', `token ${localStorage.token}`)
+  )
+
 }
 
 export default new Api();
