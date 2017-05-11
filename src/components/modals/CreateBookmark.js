@@ -50,7 +50,7 @@ export default class CreateBookmark extends Component {
     return (
       <div className="createBookmarkModal">
          <div className="group">
-        <h3>Create New Bookmard</h3>
+        <h3>Create or Edit Bookmard</h3>
         <input type="text" ref="title"
           defaultValue={this.props.title}
           onKeyUp={this._handleTyping}

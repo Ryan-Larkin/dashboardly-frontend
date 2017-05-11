@@ -22,18 +22,22 @@ export default class BoardCard extends Component {
     let { title, description, id } = this.props
     return (
       <div>
+        <div className="board-card">
+          <div className="link">
         <Link to={`/boards/${id}`}>
-          <div className="board-card">
-            <h2>{ title }</h2>
+            <h3>{ title }</h3>
             <p>{ description }</p>
-          </div>
         </Link>
-        <button className="boardEditButton" onClick={()=>this.setState({showCreateModal: true})}>
+      </div>
+        <div className="buttons">
+        <button className="btn" onClick={()=>this.setState({showCreateModal: true})}>
           Edit
         </button>
-        <button className="boardDeleteButton" onClick={this._handleDelete}>
+        <button className="btn" onClick={this._handleDelete}>
           Delete
         </button>
+      </div>
+        </div>
 
         {this.state.showCreateModal
           ? <CreateBoard
