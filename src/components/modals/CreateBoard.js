@@ -51,23 +51,23 @@ export default class CreateBoard extends Component {
 
       <div className="group">
         <h3>Create New Board</h3>
-        <input type="text" ref="title"
+        <input className="modal-input" type="text" ref="title"
           defaultValue={this.props.title}
           onKeyUp={this._handleTyping}
         />
         <span className="highlight"></span>
         <span className="bar"></span>
-        <label>Title</label>
+        <label className="modal-label">Title</label>
       </div>
 
         <div className="group">
-        <textarea ref="description" rows="4" cols="50"
+        <textarea className="modal-textarea" ref="description" rows="4" cols="50"
           defaultValue={this.props.description}
           onKeyUp={this._handleTyping}>
         </textarea>
         <span className="highlight"></span>
         <span className="bar"></span>
-        <label>Description</label>
+        <label className="modal-label">Description</label>
       </div>
 
         <div className="group">

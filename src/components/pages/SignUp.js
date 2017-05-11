@@ -6,7 +6,7 @@ import './SignUp.css';
 const ENTER = 13;
 
 export default class SignUp extends Component {
-  
+
 
   _handleSignup = () => {
     let {
@@ -43,17 +43,31 @@ export default class SignUp extends Component {
   render() {
     return (
       <div className="signup">
-        <input type="text" ref="username" placeholder="Username"
-          onKeyUp={this._handleTyping}
-        />
-        <input type="text" ref="email" placeholder="Email"
-          onKeyUp={this._handleTyping}
-        />
-        <input type="password" ref="password" placeholder="Password"
-          onKeyUp={this._handleTyping}
-        />
-
-        <button onClick={this._handleSignup}>Sign Up</button>
+        <div className="group">
+          <input className="page-input" type="text" ref="username"
+            onKeyUp={this._handleTyping}
+          />
+          <span className="highlight"></span>
+          <span className="bar"></span>
+          <label className="modal-label">Username</label>
+        </div>
+        <div className="group">
+          <input className="page-input" type="text" ref="email"
+            onKeyUp={this._handleTyping}
+          />
+          <span className="highlight"></span>
+          <span className="bar"></span>
+          <label className="modal-label">Email</label>
+        </div>
+        <div className="group">
+          <input className="page-input" type="password" ref="password"
+            onKeyUp={this._handleTyping}
+          />
+          <span className="highlight"></span>
+          <span className="bar"></span>
+          <label className="modal-label">Password</label>
+        </div>
+        <button className="signup-btn" onClick={this._handleSignup}><span>Sign Up</span></button>
 
        {this.state && this.state.error ?
           <p>{this.state.error}</p>

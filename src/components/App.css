@@ -14,7 +14,6 @@ a {
   display: flex;
   flex-flow: column;
   align-items: center;
-  background: papayawhip;
   height: 100vh
 }
 

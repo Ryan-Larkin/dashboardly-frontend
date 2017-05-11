@@ -18,7 +18,7 @@
   margin-bottom:20px;
 }
 
-input 				{
+.modal-input 				{
   font-size:14px;
   padding:10px 10px 10px 5px;
   display:block;
@@ -26,14 +26,14 @@ input 				{
   border:none;
   border-bottom:1px solid #757575;
 }
-input:focus 		{ outline:none; }
+.modal-input:focus 		{ outline:none; }
 
-input:focus ~ label, input:valid ~ label 		{
+.modal-input:focus ~ .modal-label, .modal-input:valid ~ .modal-label 		{
   top:-20px;
   font-size:18px;
 }
 
-label 				 {
+.modal-label 				 {
   transition:0.2s ease all;
   -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
@@ -58,7 +58,7 @@ label 				 {
   right:50%;
 }
 
-input:focus ~ .bar:before, input:focus ~ .bar:after {
+.modal-input:focus ~ .bar:before, .modal-input:focus ~ .bar:after {
   width:50%;
 }
 
@@ -72,10 +72,10 @@ highlight {
   opacity:0.5;
 }
 
-input:focus ~ .highlight {
-  -webkit-animation:inputHighlighter 0.3s ease;
-  -moz-animation:inputHighlighter 0.3s ease;
-  animation:inputHighlighter 0.3s ease;
+.modal-input:focus ~ .highlight {
+  -webkit-animation:.modal-inputHighlighter 0.3s ease;
+  -moz-animation:.modal-inputHighlighter 0.3s ease;
+  animation:.modal-inputHighlighter 0.3s ease;
 }
 
 .btn {
@@ -85,7 +85,7 @@ input:focus ~ .highlight {
       padding:0;
 }
 
-textarea 				{
+.modal-textarea 				{
   font-size:14px;
   padding:10px 10px 10px 5px;
   display:block;
@@ -94,19 +94,19 @@ textarea 				{
   border-bottom:1px solid #757575;
   resize: none
 }
-textarea:focus 		{ outline:none; }
+.modal-textarea:focus 		{ outline:none; }
 
-textarea:focus ~ label, input:valid ~ label 		{
+.modal-textarea:focus ~ .modal-label, .modal-input:valid ~ .modal-label 		{
   top:-20px;
   font-size:14px;
 }
 
-textarea:focus ~ .bar:before, textarea:focus ~ .bar:after {
+.modal-textarea:focus ~ .bar:before, .modal-textarea:focus ~ .bar:after {
   width:50%;
 }
 
-textarea:focus ~ .highlight {
-  -webkit-animation:inputHighlighter 0.3s ease;
-  -moz-animation:inputHighlighter 0.3s ease;
-  animation:inputHighlighter 0.3s ease;
+.modal-textarea:focus ~ .highlight {
+  -webkit-animation:.modal-inputHighlighter 0.3s ease;
+  -moz-animation:.modal-inputHighlighter 0.3s ease;
+  animation:.modal-inputHighlighter 0.3s ease;
 }

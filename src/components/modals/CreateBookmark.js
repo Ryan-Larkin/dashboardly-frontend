@@ -50,27 +50,28 @@ export default class CreateBookmark extends Component {
     return (
       <div className="createBookmarkModal">
          <div className="group">
-        <h3>Create or Edit Bookmard</h3>
-        <input type="text" ref="title"
-          defaultValue={this.props.title}
-          onKeyUp={this._handleTyping}
-        />
-        <span className="highlight"></span>
-        <span className="bar"></span>
-        <label>Title</label>
+          <h3>Create or Edit Bookmard</h3>
+          <input className="modal-input" type="text" ref="title"
+            defaultValue={this.props.title}
+            onKeyUp={this._handleTyping}
+          />
+          <span className="highlight"></span>
+          <span className="bar"></span>
+          <label className="modal-label">Title</label>
       </div>
 
         <div className="group">
-        <input type="text" ref="url"
+        <input className="modal-input"
+          type="text" ref="url"
           defaultValue={this.props.url}
           onKeyUp={this._handleTyping}
         />
         <span className="highlight"></span>
         <span className="bar"></span>
-        <label>URL</label>
+        <label className="modal-label">URL</label>
       </div>
         <div className="group">
-        <button className="btn md ghost" onClick={this._createBookmark}>Create</button>
+        <button className="btn" onClick={this._createBookmark}>Create</button>
       </div>
       </div>
     );

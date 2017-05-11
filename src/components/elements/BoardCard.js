@@ -23,20 +23,21 @@ export default class BoardCard extends Component {
     return (
       <div>
         <div className="board-card">
-          <div className="link">
-        <Link to={`/boards/${id}`}>
-            <h3>{ title }</h3>
-            <p>{ description }</p>
-        </Link>
-      </div>
+          <Link className="board-info" to={`/boards/${id}`}>
+            <div className="board-text">
+              <h3>{ title }</h3>
+              <p>{ description }</p>
+            </div>
+            <img src="http://placehold.it/120x120" alt="board display here" />
+          </Link>
         <div className="buttons">
-        <button className="btn" onClick={()=>this.setState({showCreateModal: true})}>
-          Edit
-        </button>
-        <button className="btn" onClick={this._handleDelete}>
-          Delete
-        </button>
-      </div>
+            <button className="btn" onClick={()=>this.setState({showCreateModal: true})}>
+              Edit
+            </button>
+            <button className="btn" onClick={this._handleDelete}>
+              Delete
+            </button>
+        </div>
         </div>
 
         {this.state.showCreateModal
