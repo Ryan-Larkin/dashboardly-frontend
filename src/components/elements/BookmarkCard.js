@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import CreateBookmark from '../modals/CreateBookmark';
 import api from '../../api';
+import auth from '../../auth';
 
 import './BookmarkCard.css';
 
@@ -12,8 +13,13 @@ export default class BookmarkCard extends Component {
     };
   }
 
+  _handleDelete = () => {
+    api.deleteBookmark(this.props.id)
+    .then(this.props.updateBookmarks);
+  }
+
   render() {
-    let { title, url } = this.props
+    let { id, title, url, boardId } = this.props
     return (
       <div>
         <div className="bookmark-card">
@@ -35,10 +41,12 @@ export default class BookmarkCard extends Component {
         </div>
         {this.state.showCreateModal
           ? <CreateBookmark
-            //boardId={id}
-            title={title}
-            url={url}
-            // updateBookmarks={this._fetchBoards}
+              bookmarkId={id}
+              boardId={boardId}
+              title={title}
+              url={url}
+              updateBookmarks={this.props.updateBookmarks}
+              closeModal={()=>this.setState({showCreateModal: false})}
             />
           : null
         }

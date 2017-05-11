@@ -39,40 +39,47 @@ export default class CreateBoard extends Component {
         title: title,
         description: description
       }
-      console.log('updatedData ', updatedData)
       api.updateBoard(this.props.boardId, updatedData)
       .then(this.props.updateBoards);
     }
+
+    this.props.closeModal();
   }
 
   render() {
     return (
       <div className="createBoardModal">
-
-      <div className="group">
-        <h3>Create New Board</h3>
-        <input className="modal-input" type="text" ref="title"
-          defaultValue={this.props.title}
-          onKeyUp={this._handleTyping}
-        />
-        <span className="highlight"></span>
-        <span className="bar"></span>
-        <label className="modal-label">Title</label>
-      </div>
-
         <div className="group">
-        <textarea className="modal-textarea" ref="description" rows="4" cols="50"
-          defaultValue={this.props.description}
-          onKeyUp={this._handleTyping}>
-        </textarea>
-        <span className="highlight"></span>
-        <span className="bar"></span>
-        <label className="modal-label">Description</label>
-      </div>
-
-        <div className="group">
-        <button className="btn" onClick={this._createBoard}>Create</button>
+          <h3>Create New Board</h3>
+          <input className="modal-input" type="text" ref="title"
+            defaultValue={this.props.title}
+            onKeyUp={this._handleTyping}
+          />
+          <span className="highlight"></span>
+          <span className="bar"></span>
+          <label className="modal-label">Title</label>
         </div>
+        <div className="group">
+          <textarea className="modal-textarea" ref="description" rows="4" cols="50"
+            defaultValue={this.props.description}
+            onKeyUp={this._handleTyping}>
+          </textarea>
+          <span className="highlight"></span>
+          <span className="bar"></span>
+          <label className="modal-label">Description</label>
+        </div>
+        <div className="group">
+          <textarea ref="description" rows="4" cols="50"
+            defaultValue={this.props.description}
+            onKeyUp={this._handleTyping}>
+          </textarea>
+          <span className="highlight"></span>
+          <span className="bar"></span>
+          <label>Description</label>
+        </div>
+          <div className="group">
+          <button className="btn" onClick={this._createBoard}>{this.props.boardId ? 'Edit' : 'Create'}</button>
+          </div>
       </div>
     );
   }

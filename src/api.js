@@ -41,7 +41,7 @@ class Api {
   updateBoard = (boardId, boardData) => (
     superagent
     .patch(`${API_HOST}/boards/${boardId}`)
-    .send(boardId, boardData)
+    .send({boardId, boardData})
     .set('Authorization', `token ${localStorage.token}`)
     .catch(err => console.error(err))
   )
@@ -73,16 +73,20 @@ class Api {
     .catch(err => console.error(err))
   )
 
-  // updateBookmark = () => (
-  // )
-
-  // deleteBookmark = (bookmarkId) => (
-  //   superagent
-  //   .delete(`${API_HOST}/${bookmarkId}`) // what url to put here?
-  //   .set('Authorization', `token ${localStorage.token}`)
-  //   .catch(err => console.error(err))
-  // )
-
+  updateBookmark = (bookmarkId, bookmarkData) => (
+    superagent
+    .patch(`${API_HOST}/bookmarks/${bookmarkId}`)
+    .send({bookmarkData})
+    .set('Authorization', `token ${localStorage.token}`)
+    .catch(err => console.error(err))
+  )
+  
+  deleteBookmark = (bookmarkId) => (
+    superagent
+    .delete(`${API_HOST}/bookmarks/${bookmarkId}`)
+    .set('Authorization', `token ${localStorage.token}`)
+    .catch(err => console.error(err))
+  )
 }
 
 export default new Api();

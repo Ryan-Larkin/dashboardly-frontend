@@ -42,15 +42,28 @@ export default class CreateBookmark extends Component {
         bookmarkUrl = 'https://' + url;
     }
 
-    api.createBookmark(title, bookmarkUrl, this.props.id)
-    //.then(this.props.updateBookmarks);
+    //if there is no bookmark id, it means we are making a new bookmark
+    if (!this.props.bookmarkId) {
+      api.createBookmark(title, bookmarkUrl, this.props.boardId)
+      .then(this.props.updateBookmarks);
+    }
+    else {
+      var updatedData = {
+        title: title,
+        url: bookmarkUrl
+      }
+      api.updateBookmark(this.props.bookmarkId, updatedData)
+      .then(this.props.updateBookmarks);
+    }
+
+    this.props.closeModal();
   }
 
   render() {
     return (
       <div className="createBookmarkModal">
          <div className="group">
-          <h3>Create or Edit Bookmard</h3>
+          <h3>Create or Edit Bookmark</h3>
           <input className="modal-input" type="text" ref="title"
             defaultValue={this.props.title}
             onKeyUp={this._handleTyping}
@@ -71,7 +84,7 @@ export default class CreateBookmark extends Component {
         <label className="modal-label">URL</label>
       </div>
         <div className="group">
-        <button className="btn" onClick={this._createBookmark}>Create</button>
+        <button className="btn" onClick={this._createBookmark}>{this.props.bookmarkId ? 'Edit' : 'Create'}</button>
       </div>
       </div>
     );
