@@ -14,12 +14,12 @@ export default class BoardCard extends Component {
   }
 
   _handleDelete = () => {
-    api.deleteBoard(this.props.id) // id is the board id
-    //.then(this.props.updateBoards);
+    api.deleteBoard(this.props.id)
+    .then(this.props.updateBoards);
   }
-//updateBoards={this.props.updateBoards}
+
   render() {
-    let { title, description, id } = this.props
+    let { id, title, description } = this.props
     return (
       <div>
         <Link to={`/boards/${id}`}>
@@ -40,7 +40,8 @@ export default class BoardCard extends Component {
             boardId={id}
             title={title}
             description={description}
-
+            updateBoards={this.props.updateBoards}
+            closeModal={()=>this.setState({showCreateModal: false})}
             />
           : null
         }

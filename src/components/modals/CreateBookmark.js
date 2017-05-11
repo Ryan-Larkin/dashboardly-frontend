@@ -42,8 +42,21 @@ export default class CreateBookmark extends Component {
         bookmarkUrl = 'https://' + url;
     }
 
-    api.createBookmark(title, bookmarkUrl, this.props.id)
-    //.then(this.props.updateBookmarks);
+    //if there is no bookmark id, it means we are making a new bookmark
+    if (!this.props.bookmarkId) {
+      api.createBookmark(title, bookmarkUrl, this.props.id)
+      .then(this.props.updateBookmarks);
+    }
+    else {
+      var updatedData = {
+        title: title,
+        url: bookmarkUrl
+      }
+      api.updateBookmark(this.props.bookmarkId, updatedData)
+      .then(this.props.updateBookmarks);
+    }
+
+    this.props.closeModal();
   }
 
   render() {
@@ -57,7 +70,7 @@ export default class CreateBookmark extends Component {
           defaultValue={this.props.url}
           onKeyUp={this._handleTyping}
         />
-        <button onClick={this._createBookmark}>Create</button>
+        <button onClick={this._createBookmark}>{this.props.boardId ? 'Edit' : 'Create'}</button>
       </div>
     );
   }

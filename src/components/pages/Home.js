@@ -20,10 +20,6 @@ export default class Home extends Component {
     this._fetchBoards();
   }
 
-  componentWillUpdate() {
-    this._fetchBoards();
-  }
-
   _fetchBoards = () => {
     api.getBoardsList()
     .then(res => {
@@ -31,7 +27,7 @@ export default class Home extends Component {
     })
     .catch(console.error)
   }
-//updateBoards={this._fetchBoards}
+
   render() {
     let { boards } = this.state
     return (
@@ -43,7 +39,7 @@ export default class Home extends Component {
             title={b.title}
             description={b.description}
             updatedAt={b.updatedAt}
-
+            updateBoards={this._fetchBoards}
           />
         )}
         {auth.isLoggedIn()
@@ -52,7 +48,10 @@ export default class Home extends Component {
         }
 
         {this.state.showCreateModal
-          ? <CreateBoard updateBoards={this._fetchBoards}/>
+          ? <CreateBoard
+            updateBoards={this._fetchBoards}
+            closeModal={()=>this.setState({showCreateModal: false})}
+          />
           : null
         }
       </div>

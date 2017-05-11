@@ -39,10 +39,11 @@ export default class CreateBoard extends Component {
         title: title,
         description: description
       }
-      console.log('updatedData ', updatedData)
       api.updateBoard(this.props.boardId, updatedData)
       .then(this.props.updateBoards);
     }
+
+    this.props.closeModal();
   }
 
   render() {
@@ -56,7 +57,7 @@ export default class CreateBoard extends Component {
           defaultValue={this.props.description}
           onKeyUp={this._handleTyping}>
         </textarea>
-        <button onClick={this._createBoard}>Create</button>
+        <button onClick={this._createBoard}>{this.props.boardId ? 'Edit' : 'Create'}</button>
       </div>
     );
   }

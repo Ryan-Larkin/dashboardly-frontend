@@ -14,7 +14,8 @@ export default class Board extends Component {
       title: "",
       description: "",
       bookmarks: [],
-      updatedAt: ""
+      updatedAt: "",
+      showCreateModal: false
     };
   }
 
@@ -48,6 +49,7 @@ export default class Board extends Component {
             title={b.title}
             description={b.description}
             url={b.url}
+            updateBookmarks={this.fetchBoardData}
           />
         )}
         {auth.isLoggedIn()
@@ -56,7 +58,11 @@ export default class Board extends Component {
         }
 
         {this.state.showCreateModal
-          ? <CreateBookmark id={this.props.params.id} updateBookmarks={this.fetchBoardData}/>
+          ? <CreateBookmark
+              id={this.props.params.id}
+              updateBookmarks={this.fetchBoardData}
+              closeModal={()=>this.setState({showCreateModal: false})}
+            />
           : null
         }
       </div>

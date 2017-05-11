@@ -12,8 +12,13 @@ export default class BookmarkCard extends Component {
     };
   }
 
+  _handleDelete = () => {
+    api.deleteBookmark(this.props.id)
+    .then(this.props.updateBookmarks);
+  }
+
   render() {
-    let { title, url } = this.props
+    let { id, title, url } = this.props
     return (
       <div>
         <a className="bookmark-card" href={url}>
@@ -31,10 +36,12 @@ export default class BookmarkCard extends Component {
 
         {this.state.showCreateModal
           ? <CreateBookmark
-            //boardId={id}
-            title={title}
-            url={url}
-            // updateBookmarks={this._fetchBoards}
+              bookmarkId={id}
+              boardId={this.params.id}
+              title={title}
+              url={url}
+              updateBookmarks={this.props.updateBookmark}
+              closeModal={()=>this.setState({showCreateModal: false})}
             />
           : null
         }
