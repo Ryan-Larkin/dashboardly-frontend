@@ -5,6 +5,7 @@ if they belong to that board
 new functions in auth?
 
 click outside the modal to close it? close after creating?
+Board.js
 
 
 bot apis to look at:

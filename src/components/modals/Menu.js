@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 import onClickOutside from 'react-onclickoutside';
 import auth from '../../auth';
 import './Menu.css';
-import api from '../../api'
 
 class Menu extends Component {
   constructor() {
@@ -18,25 +17,20 @@ class Menu extends Component {
     .catch(console.error);
   }
 
-  componentWillMount = () => {
-    api.getUserInfo()
-    .then(result => this.setState({avatar : result.body.users_avatarUrl, username : result.body.users_username}))
-    }
-
   handleClickOutside = () => {
     this.props.closeMenu();
   }
 
   render() {
-    let { closeMenu, show } = this.props
+    let { closeMenu, show, username, avatar } = this.props
     const isLoggedIn = auth.isLoggedIn()
     return (
       <div className={`menu ${show?"show":""}`}>
 
         {isLoggedIn ?
         <div className="menu__header">
-          <img src={this.state.avatar} alt="profile-pic" className="menu__avatar"/>
-          <div className="menu__item"><h3>{this.state.username}</h3></div>
+          <img src={avatar} alt="profile-pic" className="menu__avatar"/>
+          <div className="menu__item"><h3>{username}</h3></div>
         </div>
         : null}
 

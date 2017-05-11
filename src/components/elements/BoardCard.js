@@ -18,25 +18,34 @@ export default class BoardCard extends Component {
     .then(this.props.updateBoards);
   }
 
+  componentDidUpdate = () => {
+
+  }
+
   render() {
-    let { id, title, description } = this.props
+    let { id, title, description, ownerId, currentUserId } = this.props
     return (
       <div>
-        <Link to={`/boards/${id}`}>
-          <div className="board-card">
+        <Link to={`/boards/${id}`} className="board-card">
+          <div className="board-text-container">
             <h2>{ title }</h2>
             <p>{ description }</p>
           </div>
+          <img src="http://placehold.it/150x150" alt="Board Display Here"/>
         </Link>
-        <button className="boardEditButton" onClick={()=>this.setState({showCreateModal: true})}>
-          Edit
-        </button>
-        <button className="boardDeleteButton" onClick={this._handleDelete}>
-          Delete
-        </button>
+
+        {ownerId === currentUserId ?
+          <div>
+            <button className="boardEditButton" onClick={()=>this.setState({showCreateModal: true})}>
+              Edit
+            </button>
+            <button className="boardDeleteButton" onClick={this._handleDelete}>
+              Delete
+            </button>
+          </div> : null }
 
         {this.state.showCreateModal
-          ? <CreateBoard
+          ? <CreateBoard className="modal"
             boardId={id}
             title={title}
             description={description}

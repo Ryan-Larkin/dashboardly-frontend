@@ -58,11 +58,13 @@ export default class Board extends Component {
         }
 
         {this.state.showCreateModal
-          ? <CreateBookmark
-              boardId={this.props.params.id}
-              updateBookmarks={this.fetchBoardData}
-              closeModal={()=>this.setState({showCreateModal: false})}
-            />
+          ? <div className="backdrop">
+              <CreateBookmark className="modal"
+                boardId={this.props.params.id}
+                updateBookmarks={this.fetchBoardData}
+                closeModal={()=>this.setState({showCreateModal: false})}
+              />
+            </div>
           : null
         }
       </div>
