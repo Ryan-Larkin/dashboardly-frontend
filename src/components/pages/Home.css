@@ -8,11 +8,11 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
-.modal {
+.createBoardModal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  background: yellow;
+  background: #ccc; // fix this later
 }
