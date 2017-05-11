@@ -15,20 +15,25 @@ export default class BookmarkCard extends Component {
   render() {
     let { title, url } = this.props
     return (
+      <div>
       <div className="bookmark-card">
+        <div className="link">
         <a href={url}>
           <div>
-            <h2>{ title }</h2>
+            <h3>{ title }</h3>
           </div>
           <img src={""} alt={title}/>
         </a>
-        <button className="bookmarkEditButton" onClick={()=>this.setState({showCreateModal: true})}>
+        </div>
+        <div className="buttons">
+        <button className="btn" onClick={()=>this.setState({showCreateModal: true})}>
           Edit
         </button>
-        <button className="bookmarkDeleteButton" onClick={this._handleDelete}>
+        <button className="btn" onClick={this._handleDelete}>
           Delete
         </button>
-
+      </div>
+      </div>
         {this.state.showCreateModal
           ? <CreateBookmark
             //boardId={id}
