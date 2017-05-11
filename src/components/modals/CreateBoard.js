@@ -68,15 +68,6 @@ export default class CreateBoard extends Component {
           <span className="bar"></span>
           <label className="modal-label">Description</label>
         </div>
-        <div className="group">
-          <textarea ref="description" rows="4" cols="50"
-            defaultValue={this.props.description}
-            onKeyUp={this._handleTyping}>
-          </textarea>
-          <span className="highlight"></span>
-          <span className="bar"></span>
-          <label>Description</label>
-        </div>
           <div className="group">
           <button className="btn" onClick={this._createBoard}>{this.props.boardId ? 'Edit' : 'Create'}</button>
           </div>
