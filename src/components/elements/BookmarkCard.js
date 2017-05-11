@@ -15,8 +15,8 @@ export default class BookmarkCard extends Component {
   render() {
     let { title, url } = this.props
     return (
-      <div>
-        <a className="bookmark-card" href={url}>
+      <div className="bookmark-card">
+        <a href={url}>
           <div>
             <h2>{ title }</h2>
           </div>

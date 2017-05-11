@@ -49,15 +49,29 @@ export default class CreateBookmark extends Component {
   render() {
     return (
       <div className="createBookmarkModal">
-        <input type="text" ref="title" placeholder="Title"
+         <div className="group">
+        <h3>Create New Bookmard</h3>
+        <input type="text" ref="title"
           defaultValue={this.props.title}
           onKeyUp={this._handleTyping}
         />
-        <input type="text" ref="url" placeholder="Url"
+        <span className="highlight"></span>
+        <span className="bar"></span>
+        <label>Title</label>
+      </div>
+
+        <div className="group">
+        <input type="text" ref="url"
           defaultValue={this.props.url}
           onKeyUp={this._handleTyping}
         />
-        <button onClick={this._createBookmark}>Create</button>
+        <span className="highlight"></span>
+        <span className="bar"></span>
+        <label>URL</label>
+      </div>
+        <div className="group">
+        <button className="btn md ghost" onClick={this._createBookmark}>Create</button>
+      </div>
       </div>
     );
   }
