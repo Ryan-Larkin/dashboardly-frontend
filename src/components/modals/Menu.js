@@ -20,7 +20,7 @@ class Menu extends Component {
 
   componentWillMount = () => {
     api.getUserInfo()
-    .then(result => this.setState({info : result.body.users_avatarUrl}))
+    .then(result => this.setState({avatar : result.body.users_avatarUrl, username : result.body.users_username}))
     }
 
   handleClickOutside = () => {
@@ -35,7 +35,8 @@ class Menu extends Component {
 
         {isLoggedIn ?
         <div className="menu__header">
-          <img src={this.state.info} alt="profile-pic" className="menu__avatar"/>
+          <img src={this.state.avatar} alt="profile-pic" className="menu__avatar"/>
+          <div className="menu__item"><h3>{this.state.username}</h3></div>
         </div>
         : null}
 

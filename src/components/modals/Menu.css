@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   z-index: 10;
-  background: lightgrey;
+  background: white;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
@@ -18,10 +18,12 @@
   transform: translateX(0px);
   opacity: 1;
   visibility: visible;
+  box-shadow: 3px 3px 3px #888888;
 }
 
 .menu__header {
-  height: 160px;
+  height: 150px;
+  background: darkgrey;
 }
 
 .menu__avatar {
@@ -35,4 +37,14 @@
 .menu__list {
   display: flex;
   flex-flow: column;
+}
+
+
+.menu__item {
+  margin: 1rem;
+}
+
+.menu__item > h3 {
+  color: white;
+  padding-left: 0.25rem;
 }
