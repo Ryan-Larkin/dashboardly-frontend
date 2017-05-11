@@ -48,10 +48,12 @@ export default class Home extends Component {
         }
 
         {this.state.showCreateModal
-          ? <CreateBoard
-            updateBoards={this._fetchBoards}
-            closeModal={()=>this.setState({showCreateModal: false})}
-          />
+          ? <div className="backdrop">
+              <CreateBoard className="modal"
+                updateBoards={this._fetchBoards}
+                closeModal={()=>this.setState({showCreateModal: false})}
+              />
+            </div>
           : null
         }
       </div>

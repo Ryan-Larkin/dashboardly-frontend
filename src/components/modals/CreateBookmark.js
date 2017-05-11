@@ -44,7 +44,7 @@ export default class CreateBookmark extends Component {
 
     //if there is no bookmark id, it means we are making a new bookmark
     if (!this.props.bookmarkId) {
-      api.createBookmark(title, bookmarkUrl, this.props.id)
+      api.createBookmark(title, bookmarkUrl, this.props.boardId)
       .then(this.props.updateBookmarks);
     }
     else {
@@ -70,7 +70,7 @@ export default class CreateBookmark extends Component {
           defaultValue={this.props.url}
           onKeyUp={this._handleTyping}
         />
-        <button onClick={this._createBookmark}>{this.props.boardId ? 'Edit' : 'Create'}</button>
+        <button onClick={this._createBookmark}>{this.props.bookmarkId ? 'Edit' : 'Create'}</button>
       </div>
     );
   }

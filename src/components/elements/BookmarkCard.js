@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import CreateBookmark from '../modals/CreateBookmark';
 import api from '../../api';
+import auth from '../../auth';
 
 import './BookmarkCard.css';
 
@@ -18,7 +19,7 @@ export default class BookmarkCard extends Component {
   }
 
   render() {
-    let { id, title, url } = this.props
+    let { id, title, url, boardId } = this.props
     return (
       <div>
         <a className="bookmark-card" href={url}>
@@ -27,9 +28,9 @@ export default class BookmarkCard extends Component {
           </div>
           <img src={""} alt={title}/>
         </a>
-        <button className="bookmarkEditButton" onClick={()=>this.setState({showCreateModal: true})}>
+        {auth.isLoggedIn() ? <button className="bookmarkEditButton" onClick={()=>this.setState({showCreateModal: true})}>
           Edit
-        </button>
+        </button> : null }
         <button className="bookmarkDeleteButton" onClick={this._handleDelete}>
           Delete
         </button>
@@ -37,10 +38,10 @@ export default class BookmarkCard extends Component {
         {this.state.showCreateModal
           ? <CreateBookmark
               bookmarkId={id}
-              boardId={this.params.id}
+              boardId={boardId}
               title={title}
               url={url}
-              updateBookmarks={this.props.updateBookmark}
+              updateBookmarks={this.props.updateBookmarks}
               closeModal={()=>this.setState({showCreateModal: false})}
             />
           : null

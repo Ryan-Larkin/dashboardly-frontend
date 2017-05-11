@@ -1,29 +1,13 @@
 Questions:
 
-updateBoards
-CreateBoard, sends data
-api sends data, id and data object
-server-side update function not receiving body values, sends {}, why?
-
-also check the repetition of _fetchBoards for create and update
-reusing the fetchboards function but could maybe do this more efficiently
-pass as prop somewhere? * FIXED, MAYBE
-  ^ ask if there will be any conflicts between boardcard and home
-  pass fetchboards as prop from home to boardcard, then pass that prop
-  again for the update, should work?
-
-
-same for bookmarks for some reason => pass prop
-
-there is no page for bookmarks, so how to get the id?
-do it on the modify modal?
+make edit and delete buttons only show for the user logged in
+if they belong to that board
+new functions in auth?
 
 click outside the modal to close it? close after creating?
 
 
-fixed:
-delete boards and it will update properly
-
+bot apis to look at:
 rocket bot
 init ai
 api ai

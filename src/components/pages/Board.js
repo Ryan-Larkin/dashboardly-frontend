@@ -46,8 +46,8 @@ export default class Board extends Component {
           <BookmarkCard
             key={b.id}
             id={b.id}
+            boardId={this.props.params.id}
             title={b.title}
-            description={b.description}
             url={b.url}
             updateBookmarks={this.fetchBoardData}
           />
@@ -59,7 +59,7 @@ export default class Board extends Component {
 
         {this.state.showCreateModal
           ? <CreateBookmark
-              id={this.props.params.id}
+              boardId={this.props.params.id}
               updateBookmarks={this.fetchBoardData}
               closeModal={()=>this.setState({showCreateModal: false})}
             />
