@@ -49,15 +49,30 @@ export default class CreateBoard extends Component {
   render() {
     return (
       <div className="createBoardModal">
-        <input type="text" ref="title" placeholder="Title"
-          defaultValue={this.props.title}
-          onKeyUp={this._handleTyping}
-        />
-        <textarea ref="description" rows="4" cols="50" placeholder="Description"
-          defaultValue={this.props.description}
-          onKeyUp={this._handleTyping}>
-        </textarea>
-        <button onClick={this._createBoard}>{this.props.boardId ? 'Edit' : 'Create'}</button>
+        <div className="group">
+          <h3>Create New Board</h3>
+          <input type="text" ref="title"
+            defaultValue={this.props.title}
+            onKeyUp={this._handleTyping}
+          />
+          <span className="highlight"></span>
+          <span className="bar"></span>
+          <label>Title</label>
+        </div>
+
+          <div className="group">
+          <textarea ref="description" rows="4" cols="50"
+            defaultValue={this.props.description}
+            onKeyUp={this._handleTyping}>
+          </textarea>
+          <span className="highlight"></span>
+          <span className="bar"></span>
+          <label>Description</label>
+        </div>
+
+          <div className="group">
+          <button className="btn" onClick={this._createBoard}>{this.props.boardId ? 'Edit' : 'Create'}</button>
+          </div>
       </div>
     );
   }

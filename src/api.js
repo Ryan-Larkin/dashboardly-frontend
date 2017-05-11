@@ -58,6 +58,13 @@ class Api {
     .get(`${API_HOST}/boards/${boardId}/bookmarks`)
   )
 
+  getUserInfo = () => (
+    superagent
+    .get(`${API_HOST}/auth/me`)
+    .set('Authorization', `token ${localStorage.token}`)
+  )
+
+
   createBookmark = (title, url, boardId) => (
     superagent
     .post(`${API_HOST}/boards/${boardId}/bookmarks`)
@@ -73,7 +80,7 @@ class Api {
     .set('Authorization', `token ${localStorage.token}`)
     .catch(err => console.error(err))
   )
-
+  
   deleteBookmark = (bookmarkId) => (
     superagent
     .delete(`${API_HOST}/bookmarks/${bookmarkId}`)
