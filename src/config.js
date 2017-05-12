@@ -1,3 +1,3 @@
 module.exports = {
-  API_HOST: "http://localhost:3001"
+  API_HOST: "http://663595f3.ngrok.io"
 }

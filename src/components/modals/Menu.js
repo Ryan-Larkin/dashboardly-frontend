@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import onClickOutside from 'react-onclickoutside';
 import auth from '../../auth';
 import './Menu.css';
+import api from '../../api.js'
 
 class Menu extends Component {
   constructor() {

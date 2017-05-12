@@ -13,6 +13,7 @@
   width:190px;
   border:none;
   border-bottom:1px solid #757575;
+  background: papayawhip
 }
 .page-input:focus 		{ outline:none; }
 
