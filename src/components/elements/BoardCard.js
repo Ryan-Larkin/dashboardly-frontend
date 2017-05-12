@@ -32,7 +32,9 @@ export default class BoardCard extends Component {
               <h3>{ title }</h3>
               <p>{ description }</p>
             </div>
+            <div className="board-image">
             <img src="http://placehold.it/120x120" alt="board display here" />
+          </div>
           </Link>
         {ownerId === currentUserId ?
         <div className="buttons">
