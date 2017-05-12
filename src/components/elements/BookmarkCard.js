@@ -50,9 +50,9 @@ export default class BookmarkCard extends Component {
             bookmarkId={id}
             boardId={boardId}
             title={title}
-              url={url}
-              updateBookmarks={this.props.updateBookmarks}
-              closeModal={()=>this.setState({showCreateModal: false})}
+            url={url}
+            updateBookmarks={this.props.updateBookmarks}
+            closeModal={()=>this.setState({showCreateModal: false})}
             />
           : null
         }
