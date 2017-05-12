@@ -35,7 +35,9 @@ export default class BoardCard extends Component {
               <p>{ description }</p>
             </div>
             <div className="board-image">
-            <img src="http://placehold.it/120x120" alt="board display here" />
+              <img src={`http://lorempixel.com/${this.getRandNum(145,155)}/${this.getRandNum(145,155)}/`}
+                alt="board display here"
+              />
           </div>
           </Link>
         {ownerId === currentUserId ?
