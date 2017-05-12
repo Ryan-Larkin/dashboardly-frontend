@@ -21,6 +21,8 @@ export default class BoardCard extends Component {
   componentDidUpdate = () => {
 
   }
+  
+  getRandNum = (min, max) => Math.floor(Math.random()*(max-min+1)+min)
 
   render() {
     let { id, title, description, ownerId, currentUserId } = this.props
@@ -32,7 +34,10 @@ export default class BoardCard extends Component {
               <h3>{ title }</h3>
               <p>{ description }</p>
             </div>
-            <img src="http://placehold.it/120x120" alt="board display here" />
+            <img
+              src={`http://lorempixel.com/${this.getRandNum(145,155)}/${this.getRandNum(145,155)}/`}
+              alt="board display here"
+            />
           </Link>
         {ownerId === currentUserId ?
         <div className="buttons">
