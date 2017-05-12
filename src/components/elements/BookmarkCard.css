@@ -9,10 +9,14 @@
   flex-direction: column;
 }
 
+.bookmark-image {
+    width : 40%;
+    padding-left: 10%
+}
+
 .bookmark-info {
   display: flex;
   flex-direction: row;
-  width: 90%;
   padding-bottom: 40px
 }
 
@@ -30,7 +34,7 @@
 
 .bookmark-text {
   flex-direction: column;
-  margin-right: 30%
+  width: 40%;
 }
 
 .btn {

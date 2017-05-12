@@ -27,7 +27,9 @@ export default class BookmarkCard extends Component {
               <h3>{ title }</h3>
               <img src={""} alt={title}/>
             </a>
+            <div className="bookmark-image">
             <img src="http://placehold.it/120x120" alt="board display here" />
+          </div>
           </div>
           <div className="buttons">
             <button className="btn" onClick={()=>this.setState({showCreateModal: true})}>

@@ -53,7 +53,7 @@ export default class Board extends Component {
           />
         )}
         {auth.isLoggedIn()
-          ? <AddButton action={()=>this.setState({showCreateModal: true})}/>
+          ? <AddButton className="add-button" action={()=>this.setState({showCreateModal: true})}/>
           : null
         }
 
