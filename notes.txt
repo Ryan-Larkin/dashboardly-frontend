@@ -13,9 +13,35 @@ rocket bot
 init ai
 api ai
 
+what is curl
 
 
-center page
-make 3 column layout
-header background-colour
-button down to the bottom right
+resources -> addons -> cleardb
+
+settings -> reveal config vars
+url has all info for mysql database
+
+
+database connection
+use jaws instead
+if process.env.JAWSDB_URL {
+connection = mysql.createPool(process.env.JAWSDB_URL)
+}
+else {
+connection = mysql.createPool({
+user: standard stuff here
+database:
+password:
+})
+}
+
+remove create database commands from tables.sql
+
+taken from link
+mysql -uUSER -hLINK -p
+copy paste password here
+
+logs me into remote mysql server
+
+source file here
+source database/tables.sql

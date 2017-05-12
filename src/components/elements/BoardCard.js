@@ -56,15 +56,16 @@ export default class BoardCard extends Component {
         </div> : null }
         </div>
         {this.state.showCreateModal
-          ? <CreateBoard className="modal"
-            boardId={id}
-            title={title}
-            description={description}
-            updateBoards={this.props.updateBoards}
-            closeModal={()=>this.setState({showCreateModal: false})}
+          ? <div className="backdrop">
+              <CreateBoard className="modal"
+              boardId={id}
+              title={title}
+              description={description}
+              updateBoards={this.props.updateBoards}
+              closeModal={()=>this.setState({showCreateModal: false})}
             />
-          : null
-        }
+            </div>
+          : null}
       </div>
     );
   }
