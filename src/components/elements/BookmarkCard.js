@@ -35,7 +35,7 @@ export default class BookmarkCard extends Component {
               alt="board display here"
             />
           </div>
-          </div>
+        </div>
           <div className="buttons">
             <button className="btn" onClick={()=>this.setState({showCreateModal: true})}>
               Edit
@@ -46,9 +46,9 @@ export default class BookmarkCard extends Component {
           </div>
         {this.state.showCreateModal
           ? <CreateBookmark
-              bookmarkId={id}
-              boardId={boardId}
-              title={title}
+            bookmarkId={id}
+            boardId={boardId}
+            title={title}
               url={url}
               updateBookmarks={this.props.updateBookmarks}
               closeModal={()=>this.setState({showCreateModal: false})}
