@@ -57,7 +57,9 @@ password:
 }
 
 remove create database commands from tables.sql
-mysql://zmtcukjkzc9nzz7a:xlwmgp6iqo3258pz@hngomrlb3vfq3jcr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/cncsacd3qw5qe9c7
+
+mysql://qig02n8fugvzuac1:ipenjo8mpwy8i80a@hngomrlb3vfq3jcr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/caquifs7ynb623n3
+
 taken from link
 mysql -uUSER -hLINK -p
 copy paste password here
