@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import api from '../../api';
+import onClickOutside from 'react-onclickoutside';
+
 
 import './CreateBoard.css';
 
 const ENTER = 13;
 
-export default class CreateBoard extends Component {
+export default onClickOutside(class CreateBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -18,6 +20,10 @@ export default class CreateBoard extends Component {
     if (e.keyCode===ENTER) {
       this._createBoard();
     }
+  }
+  
+  handleClickOutside = () => {
+    this.props.closeModal();
   }
 
   _createBoard = () => {
@@ -75,4 +81,4 @@ export default class CreateBoard extends Component {
     );
   }
 
-}
+})
