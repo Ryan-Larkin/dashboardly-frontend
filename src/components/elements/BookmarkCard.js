@@ -8,17 +8,20 @@ export default class BookmarkCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showCreateModal: false
+      showCreateModal: false,
+      image: ""
     };
+  }
+  
+  componentDidMount() {
+    api.getImageFromUrl(this.props.url)
+    .then(imageUrl => this.setState({ image: imageUrl }))
   }
 
   _handleDelete = () => {
     api.deleteBookmark(this.props.id)
     .then(this.props.updateBookmarks);
   }
-
-  getRandNum = (min, max) => Math.floor(Math.random()*(max-min+1)+min)
-
 
   render() {
     let { id, title, url, boardId } = this.props
@@ -31,7 +34,7 @@ export default class BookmarkCard extends Component {
               <img src={""} alt={title}/>
             </a>
             <img className="bookmark-image"
-              src={`http://lorempixel.com/${this.getRandNum(145,155)}/${this.getRandNum(145,155)}/`}
+              src={this.state.image}
               alt="board display here"
             />
           </div>
