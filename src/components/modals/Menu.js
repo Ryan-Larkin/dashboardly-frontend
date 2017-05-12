@@ -4,7 +4,7 @@ import onClickOutside from 'react-onclickoutside';
 import auth from '../../auth';
 import api from '../../api';
 import './Menu.css';
-import api from '../../api.js'
+
 
 class Menu extends Component {
   constructor() {
