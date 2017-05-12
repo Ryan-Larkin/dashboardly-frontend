@@ -9,7 +9,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isMenuOpen: false
+      isMenuOpen: false,
+      color: 'papayawhip'
     }
   }
 
@@ -33,18 +34,37 @@ class App extends Component {
     auth.offAuthChange(this.fetchCurrentUser);
   }
 
+  changeColor = (color) => {
+    this.setState({color})
+  }
+
+  showColorMenu = () => {
+    this.setState({
+      showColorMenu: true
+    })
+  }
+/*
+onClick={this.showColorMenu}
+{this.state.showColorMenu === true ?
+ <div className="color-menu">
+   <ul>
+     <li onClick={this.changeColor('papayawhip')} >Default</li>
+     <li onClick={this.changeColor('gray')}>Gray</li>
+   </ul>
+ </div> : null}
+ */
   closeMenu = () => this.setState({ isMenuOpen: false })
 
   render() {
     let {isMenuOpen, user} = this.state
     return (
-      <div className="App">
+      <div className="App" style={{backgroundColor: this.state.color}}>
         <div className="App-navbar">
           <i className="fa fa-bars fa-2x menu-icon"
             onClick={()=>this.setState({ isMenuOpen: !isMenuOpen })}
           />
           <Link to="/" className="App-navbar__title">Dashboardly</Link>
-          <i className="fa fa-cog fa-2x settings-icon"/>
+          <i className="fa fa-cog fa-2x settings-icon"  />
         </div>
 
        <Menu show={isMenuOpen}

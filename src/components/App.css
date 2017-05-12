@@ -3,7 +3,6 @@ body {
   box-sizing: border-box;
   font-size: 12px;
   margin: 0px;
-  background: papayawhip
 }
 
 a {
@@ -42,4 +41,10 @@ a {
 
 .settings-icon:hover, .menu-icon:hover, .App-navbar__title:hover {
   color: DarkOliveGreen;
+}
+
+.color-menu {
+  background-color:white;
+  display:flex;
+  justify-content: flex-start;
 }
