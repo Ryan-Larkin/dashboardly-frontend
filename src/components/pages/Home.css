@@ -1,7 +1,6 @@
 .home {
   display: flex;
   flex-flow: row wrap;
-  align-content: center;
   justify-content: center;
 }
 
