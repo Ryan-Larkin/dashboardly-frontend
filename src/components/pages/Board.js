@@ -4,7 +4,7 @@ import BookmarkCard from '../elements/BookmarkCard';
 import auth from '../../auth';
 import AddButton from '../elements/AddButton';
 import CreateBookmark from '../modals/CreateBookmark';
-
+import '../../Grid.css'
 import './Board.css';
 
 export default class Board extends Component {

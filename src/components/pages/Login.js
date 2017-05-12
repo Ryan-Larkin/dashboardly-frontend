@@ -31,13 +31,25 @@ export default class Login extends Component {
   render() {
     return (
       <div className="login">
-        <input type="text" ref="email"
-          onKeyUp={this._handleTyping}
-        />
-        <input type="password" ref="password"
-          onKeyUp={this._handleTyping}
-        />
-        <button onClick={this._handleLogin}>login</button>
+        <div className="group">
+          <input className="page-input"
+            type="text" ref="email"
+            onKeyUp={this._handleTyping}
+          />
+          <span className="highlight"></span>
+          <span className="bar"></span>
+          <label className="modal-label">Email</label>
+        </div>
+        <div className="group">
+          <input className="page-input"
+            type="password" ref="password"
+            onKeyUp={this._handleTyping}
+          />
+          <span className="highlight"></span>
+          <span className="bar"></span>
+          <label className="modal-label">Password</label>
+       </div>
+        <button className="login-btn" onClick={this._handleLogin}><span>login</span></button>
       </div>
     );
   }

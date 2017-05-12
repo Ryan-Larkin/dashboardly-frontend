@@ -26,24 +26,24 @@ export default class BoardCard extends Component {
     let { id, title, description, ownerId, currentUserId } = this.props
     return (
       <div>
-        <Link to={`/boards/${id}`} className="board-card">
-          <div className="board-text-container">
-            <h2>{ title }</h2>
-            <p>{ description }</p>
-          </div>
-          <img src="http://placehold.it/150x150" alt="Board Display Here"/>
-        </Link>
-
+        <div className="board-card">
+          <Link className="board-info" to={`/boards/${id}`}>
+            <div className="board-text">
+              <h3>{ title }</h3>
+              <p>{ description }</p>
+            </div>
+            <img src="http://placehold.it/120x120" alt="board display here" />
+          </Link>
         {ownerId === currentUserId ?
-          <div>
-            <button className="boardEditButton" onClick={()=>this.setState({showCreateModal: true})}>
+        <div className="buttons">
+            <button className="btn" onClick={()=>this.setState({showCreateModal: true})}>
               Edit
             </button>
-            <button className="boardDeleteButton" onClick={this._handleDelete}>
+            <button className="btn" onClick={this._handleDelete}>
               Delete
             </button>
-          </div> : null }
-
+        </div> : null }
+        </div>
         {this.state.showCreateModal
           ? <CreateBoard className="modal"
             boardId={id}

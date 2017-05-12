@@ -1,0 +1,129 @@
+.singup {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  margin-top: 45px
+}
+
+
+.page-input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:190px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+.page-input:focus 		{ outline:none; }
+
+.page-input:focus ~ label, .page-input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+}
+
+label 				 {
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+.bar 	{ position:relative; display:block; width:190px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:black;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+.page-input:focus ~ .bar:before, .page-input:focus ~ .bar:after {
+  width:50%;
+}
+
+highlight {
+  position:absolute;
+  height:60%;
+  width:200px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+.page-input:focus ~ .highlight {
+  -webkit-animation:.page-inputHighlighter 0.3s ease;
+  -moz-animation:.page-inputHighlighter 0.3s ease;
+  animation:.page-inputHighlighter 0.3s ease;
+}
+
+.signup-btn {
+  position: relative;
+
+  display: block;
+  margin: 30px auto;
+  padding: 0;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+  background-color: #2ecc71;
+  color: #ecf0f1;
+
+  transition: background-color .3s;
+}
+
+.signup-btn:hover, .signup-btn:focus {
+  background-color: #27ae60;
+}
+
+.signup-btn > * {
+  position: relative;
+}
+
+.signup-btn span {
+  display: block;
+  padding: 12px 24px;
+}
+
+.signup-btn:before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, .3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.signup-btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width .2s ease-out, padding-top .2s ease-out;
+}

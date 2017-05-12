@@ -17,6 +17,16 @@ class Menu extends Component {
     .catch(console.error);
   }
 
+  getInitialState = () => {
+    api.getUserInfo()
+    .then(result => this.setState({avatar : result.body.users_avatarUrl, username : result.body.users_username}))
+  }
+
+  componentWillMount = () => {
+    api.getUserInfo()
+    .then(result => this.setState({avatar : result.body.users_avatarUrl, username : result.body.users_username}))
+    }
+
   handleClickOutside = () => {
     this.props.closeMenu();
   }
