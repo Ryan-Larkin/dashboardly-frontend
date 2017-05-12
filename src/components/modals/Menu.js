@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import onClickOutside from 'react-onclickoutside';
 import auth from '../../auth';
+import api from '../../api';
 import './Menu.css';
 import api from '../../api.js'
 
@@ -19,14 +20,18 @@ class Menu extends Component {
   }
 
   getInitialState = () => {
-    api.getUserInfo()
-    .then(result => this.setState({avatar : result.body.users_avatarUrl, username : result.body.users_username}))
+    if(auth.isLoggedIn()) {
+      api.getUserInfo()
+      .then(result => this.setState({avatar : result.body.users_avatarUrl, username : result.body.users_username}))
+    }
   }
 
   componentWillMount = () => {
-    api.getUserInfo()
-    .then(result => this.setState({avatar : result.body.users_avatarUrl, username : result.body.users_username}))
+    if(auth.isLoggedIn()) {
+      api.getUserInfo()
+      .then(result => this.setState({avatar : result.body.users_avatarUrl, username : result.body.users_username}))
     }
+  }
 
   handleClickOutside = () => {
     this.props.closeMenu();
