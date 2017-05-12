@@ -20,6 +20,11 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+.bookmark-image {
+  width: 150px;
+  height: 150px;
+}
+
 .buttons {
   display: flex;
   margin-bottom: 1px;

@@ -11,7 +11,10 @@ class Api {
   getImageFromUrl = (url) => {
     return superagent
     .get(`https://api.diffbot.com/v3/image?token=d717ed541360f20e8f90c74125b9dc8f&url=${url}`)
-    .then(res => res.objects[0].url)
+    .then(res => {
+      console.log(res)
+      return res.body.objects[0].url
+    })
   }
 
   requestLogin = (email, password) => (
