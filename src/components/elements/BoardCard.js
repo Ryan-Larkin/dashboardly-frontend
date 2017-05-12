@@ -9,7 +9,9 @@ export default class BoardCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showCreateModal: false
+      showCreateModal: false,
+      dim1: 150,
+      dim2: 150
     };
   }
 
@@ -18,8 +20,11 @@ export default class BoardCard extends Component {
     .then(this.props.updateBoards);
   }
 
-  componentDidUpdate = () => {
-
+  componentWillMount() {
+    this.setState({
+      dim1: this.getRandNum(145,155),
+      dim2: this.getRandNum(145,155)
+    })
   }
 
   getRandNum = (min, max) => Math.floor(Math.random()*(max-min+1)+min)
@@ -35,7 +40,7 @@ export default class BoardCard extends Component {
               <p>{ description }</p>
             </div>
             <div className="board-image">
-              <img src={`http://lorempixel.com/${this.getRandNum(145,155)}/${this.getRandNum(145,155)}/`}
+              <img src={`http://lorempixel.com/${this.state.dim1}/${this.state.dim2}/`}
                 alt="board display here"
               />
           </div>
