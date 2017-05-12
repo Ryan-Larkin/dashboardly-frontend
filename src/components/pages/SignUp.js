@@ -36,7 +36,7 @@ export default class SignUp extends Component {
       this.setState({ error: null })
     }
     if (e.keyCode===ENTER) {
-      this._handleLogin()
+      this._handleSignup()
     }
   }
 
