@@ -4,7 +4,6 @@ import BoardCard from '../elements/BoardCard';
 import AddButton from '../elements/AddButton';
 import CreateBoard from '../modals/CreateBoard';
 import auth from '../../auth';
-import onClickOutside from 'react-onclickoutside';
 
 import './Home.css';
 
@@ -32,10 +31,6 @@ class Home extends Component {
 
   closeModal = () => this.setState({ showCreateModal: false })
 
-  handleClickOutside = () => {
-    this.closeModal();
-  }
-
   render() {
     let { boards } = this.state
     const { user } = this.props
@@ -60,11 +55,11 @@ class Home extends Component {
 
         {this.state.showCreateModal
           ? <div className="backdrop">
-              <CreateBoard
-                updateBoards={this._fetchBoards}
-                closeModal={()=>this.setState({showCreateModal: false})}
-              />
-            </div>
+            <CreateBoard
+              updateBoards={this._fetchBoards}
+              closeModal={()=>this.setState({showCreateModal: false})}
+            />
+          </div>
           : null
         }
       </div>
@@ -73,4 +68,4 @@ class Home extends Component {
 
 }
 
-export default onClickOutside(Home);
+export default Home;

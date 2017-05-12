@@ -9,6 +9,11 @@
   flex-direction: column;
 }
 
+.bookmark-image {
+    width : 40%;
+    padding-left: 10%
+}
+
 .board-info {
   display: flex;
   flex-direction: row;
@@ -28,7 +33,7 @@
 
 .board-text {
   flex-direction: column;
-  margin-right: 40px
+  width: 40%;
 }
 
 .btn {
