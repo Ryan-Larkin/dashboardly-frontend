@@ -35,7 +35,6 @@ export default class BookmarkCard extends Component {
               alt="board display here"
             />
           </div>
-        </div>
           <div className="buttons">
             <button className="btn" onClick={()=>this.setState({showCreateModal: true})}>
               Edit
@@ -43,6 +42,7 @@ export default class BookmarkCard extends Component {
             <button className="btn" onClick={this._handleDelete}>
               Delete
             </button>
+            </div>
           </div>
         {this.state.showCreateModal
           ? <CreateBookmark
