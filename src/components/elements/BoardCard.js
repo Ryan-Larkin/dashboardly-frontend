@@ -21,7 +21,7 @@ export default class BoardCard extends Component {
   componentDidUpdate = () => {
 
   }
-  
+
   getRandNum = (min, max) => Math.floor(Math.random()*(max-min+1)+min)
 
   render() {
@@ -34,10 +34,9 @@ export default class BoardCard extends Component {
               <h3>{ title }</h3>
               <p>{ description }</p>
             </div>
-            <img
-              src={`http://lorempixel.com/${this.getRandNum(145,155)}/${this.getRandNum(145,155)}/`}
-              alt="board display here"
-            />
+            <div className="board-image">
+            <img src="http://placehold.it/120x120" alt="board display here" />
+          </div>
           </Link>
         {ownerId === currentUserId ?
         <div className="buttons">
