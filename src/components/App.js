@@ -33,6 +33,16 @@ class App extends Component {
     auth.offAuthChange(this.fetchCurrentUser);
   }
 
+  changeColor = (color) => {
+    this.setState({color})
+  }
+
+  showColorMenu = () => {
+    this.setState({
+      showColorMenu: true
+    })
+  }
+  
   closeMenu = () => this.setState({ isMenuOpen: false })
 
   render() {
@@ -44,7 +54,7 @@ class App extends Component {
             onClick={()=>this.setState({ isMenuOpen: !isMenuOpen })}
           />
           <Link to="/" className="App-navbar__title">Dashboardly</Link>
-          <i className="fa fa-cog fa-2x settings-icon"/>
+          <i className="fa fa-cog fa-2x settings-icon"  />
         </div>
 
        <Menu show={isMenuOpen}

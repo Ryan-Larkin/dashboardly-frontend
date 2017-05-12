@@ -15,7 +15,7 @@ a {
   display: flex;
   flex-flow: column;
   align-items: center;
-  height: 100vh
+  min-height: 100vh
 }
 
 .App-navbar {
@@ -42,4 +42,10 @@ a {
 
 .settings-icon:hover, .menu-icon:hover, .App-navbar__title:hover {
   color: DarkOliveGreen;
+}
+
+.color-menu {
+  background-color:white;
+  display:flex;
+  justify-content: flex-start;
 }
