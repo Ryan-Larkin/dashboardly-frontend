@@ -9,8 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isMenuOpen: false,
-      color: 'papayawhip'
+      isMenuOpen: false
     }
   }
 
@@ -43,22 +42,13 @@ class App extends Component {
       showColorMenu: true
     })
   }
-/*
-onClick={this.showColorMenu}
-{this.state.showColorMenu === true ?
- <div className="color-menu">
-   <ul>
-     <li onClick={this.changeColor('papayawhip')} >Default</li>
-     <li onClick={this.changeColor('gray')}>Gray</li>
-   </ul>
- </div> : null}
- */
+  
   closeMenu = () => this.setState({ isMenuOpen: false })
 
   render() {
     let {isMenuOpen, user} = this.state
     return (
-      <div className="App" style={{backgroundColor: this.state.color}}>
+      <div className="App">
         <div className="App-navbar">
           <i className="fa fa-bars fa-2x menu-icon"
             onClick={()=>this.setState({ isMenuOpen: !isMenuOpen })}
