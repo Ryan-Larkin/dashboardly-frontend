@@ -9,6 +9,14 @@
   flex-direction: column;
 }
 
+<<<<<<< HEAD
+=======
+.bookmark-image {
+    /*width : 40%;*/
+    padding-left: 10%
+}
+
+>>>>>>> d506e2b382d723eb0392171de376cc88e4e0dd2b
 .bookmark-info {
   display: flex;
   flex-direction: row;
