@@ -17,6 +17,9 @@ export default class BookmarkCard extends Component {
     .then(this.props.updateBookmarks);
   }
 
+  getRandNum = (min, max) => Math.floor(Math.random()*(max-min+1)+min)
+
+
   render() {
     let { id, title, url, boardId } = this.props
     return (
@@ -27,8 +30,10 @@ export default class BookmarkCard extends Component {
               <h3>{ title }</h3>
               <img src={""} alt={title}/>
             </a>
-            <div className="bookmark-image">
-            <img src="http://placehold.it/120x120" alt="board display here" />
+            <img className="bookmark-image"
+              src={`http://lorempixel.com/${this.getRandNum(145,155)}/${this.getRandNum(145,155)}/`}
+              alt="board display here"
+            />
           </div>
           </div>
           <div className="buttons">
@@ -39,7 +44,6 @@ export default class BookmarkCard extends Component {
               Delete
             </button>
           </div>
-        </div>
         {this.state.showCreateModal
           ? <CreateBookmark
               bookmarkId={id}

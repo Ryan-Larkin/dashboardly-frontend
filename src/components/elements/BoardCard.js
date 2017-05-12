@@ -22,6 +22,8 @@ export default class BoardCard extends Component {
 
   }
 
+  getRandNum = (min, max) => Math.floor(Math.random()*(max-min+1)+min)
+
   render() {
     let { id, title, description, ownerId, currentUserId } = this.props
     return (
