@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import api from '../../api';
+import onClickOutside from 'react-onclickoutside';
+
 
 import './CreateBookmark.css';
 
 const ENTER = 13;
 
-export default class CreateBookmark extends Component {
+export default onClickOutside(class CreateBookmark extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -58,6 +60,11 @@ export default class CreateBookmark extends Component {
 
     this.props.closeModal();
   }
+  
+  handleClickOutside = () => {
+    this.props.closeModal();
+  }
+  
 
   render() {
     return (
@@ -90,4 +97,4 @@ export default class CreateBookmark extends Component {
     );
   }
 
-}
+})
