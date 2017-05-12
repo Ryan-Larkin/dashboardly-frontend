@@ -5,7 +5,6 @@ import auth from '../../auth';
 import api from '../../api';
 import './Menu.css';
 
-
 class Menu extends Component {
   constructor() {
     super();
