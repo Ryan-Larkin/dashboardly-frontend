@@ -12,3 +12,10 @@ bot apis to look at:
 rocket bot
 init ai
 api ai
+
+
+
+center page
+make 3 column layout
+header background-colour
+button down to the bottom right

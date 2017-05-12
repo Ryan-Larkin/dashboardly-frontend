@@ -80,7 +80,7 @@ class Api {
     .set('Authorization', `token ${localStorage.token}`)
     .catch(err => console.error(err))
   )
-  
+
   deleteBookmark = (bookmarkId) => (
     superagent
     .delete(`${API_HOST}/bookmarks/${bookmarkId}`)

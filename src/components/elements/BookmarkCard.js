@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import CreateBookmark from '../modals/CreateBookmark';
 import api from '../../api';
-import auth from '../../auth';
 
 import './BookmarkCard.css';
 
