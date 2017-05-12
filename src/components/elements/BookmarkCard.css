@@ -9,11 +9,6 @@
   flex-direction: column;
 }
 
-.bookmark-image {
-    width : 40%;
-    padding-left: 10%
-}
-
 .bookmark-info {
   display: flex;
   flex-direction: row;
