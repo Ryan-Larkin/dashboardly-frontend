@@ -34,6 +34,8 @@ export default class BookmarkCard extends Component {
               src={`http://lorempixel.com/${this.getRandNum(145,155)}/${this.getRandNum(145,155)}/`}
               alt="board display here"
             />
+            
+          </div>
           </div>
           <div className="buttons">
             <button className="btn" onClick={()=>this.setState({showCreateModal: true})}>
