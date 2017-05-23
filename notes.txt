@@ -58,7 +58,7 @@ password:
 
 remove create database commands from tables.sql
 
-mysql://qig02n8fugvzuac1:ipenjo8mpwy8i80a@hngomrlb3vfq3jcr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/caquifs7ynb623n3
+mysql://USER:PASSWORD@LINK:xxxx/DB_NAME
 
 taken from link
 mysql -uUSER -hLINK -p
